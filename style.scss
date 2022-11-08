@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+@import "nullstyle.scss";
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #EFF1F7;
+}
+
+a,
+.btn {
+    transition: .3s linear;
+}
+
+.btn {
+    background-color: #2BD0D0;
+
+    &:hover {
+        background-color: #9AE3E3;
+    }
+}
+
+.logo {
+    @include font(32, 700, normal, capitalize, #34313D);
+}
+
+.container {
+    max-width: 1130px;
+    padding: 0 15px;
+    margin: auto;
+}
+
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+
+    & .header-content {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        @include flex(center, space-between);
+
+        &__start {
+            @include flex(center, $cGap: 45px);
+
+            &__logo {
+                @include font(32, 700, normal, none, #34313D);
+            }
+
+            &__navbar {
+                @include flex($cGap: 29px);
+
+                &__link {
+                    @include font(15, 700, 22, capitalize, #9E9AA8);
+
+                    &:hover {
+                        color: #34313D;
+                    }
+                }
+            }
+        }
+
+        &__login {
+            @include flex(center, $cGap: 37px);
+
+            &__log-in {
+                @include font(15, 700, 22, capitalize, #9E9AA8);
+
+                &:hover {
+                    color: #34313D;
+                }
+            }
+
+            &__signup {
+                @include font(15, 700, 22, capitalize, #FFFFFF);
+                padding: 9px 23px;
+                border-radius: 28px;
+            }
+        }
+    }
+}
+
+main {
+    & .main-page {
+        background: url(./assets/img/bg.png) calc(50vw - -100px) center no-repeat, linear-gradient(90deg, white, white);
+        padding-top: 88px;
+
+        &__content {
+            &__start {
+                width: 100%;
+                padding-top: 140px;
+                padding-bottom: 220px;
+
+                &__block {
+                    max-width: 564px;
+
+                    &__title {
+                        @include font(80, 700, 90, none, #34313D);
+                        letter-spacing: -2px;
+                    }
+
+                    &__subtitle {
+                        @include font(22, 500, 36, none, #9E9AA8);
+                        margin-bottom: 38px;
+                    }
+
+                    &__btn {
+                        @include font(20, 700, 30, capitalize, #FFFFFF);
+                        padding: 13px 40px;
+                        border-radius: 28px;
+                    }
+                }
+            }
+        }
+    }
+
+    & .shorten-it {
+        margin-top: -85px;
+        margin-bottom: 120px;
+
+        &__content {
+            padding: 52px 65px;
+            border-radius: 10px;
+            background: url(./assets/img/shorten.jpg) no-repeat;
+
+            &__form {
+                @include flex(center, $cGap: 24px);
+
+                & input {
+                    padding: 14px 32px;
+                    border-radius: 10px;
+                    @include font(20, 500, normal, none, #34313D);
+                    flex-grow: 1;
+
+                    &::placeholder {
+                        @include font(20, 500, normal, none, #34313D);
+                        position: absolute;
+                        top: 52%;
+                        transform: translateY(-52%);
+                        letter-spacing: .15px;
+                        opacity: .5;
+                    }
+                }
+
+                & button {
+                    @include font(20, 700, 30, capitalize, #FFFFFF);
+                    padding: 17px 40px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    & .advanced-content {
+        margin-bottom: 120px;
+
+        &__title,
+        &__subtitle {
+            text-align: center;
+        }
+
+        &__title {
+            @include font(40, 700, 48, capitalize, #34313D);
+            margin-bottom: 18px;
+        }
+
+        &__subtitle {
+            @include font(18, 500, 32, none, #9E9AA8);
+            max-width: 540px;
+            margin-bottom: 56px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &__cardblock {
+            position: relative;
+
+
+            &__line {
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 8px;
+                background-color: #2BD0D0;
+            }
+
+            &__content {
+                min-height: 400px;
+                @include flex($jContent: space-between);
+
+                &__card {
+                    width: 350px;
+                    min-height: 310px;
+                    padding-top: 44px;
+                    overflow: hidden;
+
+                    &__content {
+                        position: relative;
+                        padding: 88px 32px 41px;
+                        background-color: #FFFFFF;
+                        border-radius: 5px;
+
+                        &__imgbox {
+                            width: 88px;
+                            height: 88px;
+                            border-radius: 50%;
+                            background-color: #3A3054;
+                            @include flex(center, center);
+                            transform: translateY(-50%);
+                            position: absolute;
+                            top: 0;
+                        }
+
+                        &__title {
+                            @include font(22, 700, 33, capitalize, #34313D);
+                            margin-bottom: 12px;
+                        }
+
+                        &__subtitle {
+                            @include font(15, 500, 26, none, #9E9AA8);
+                        }
+
+                    }
+
+                    &:nth-child(2) {
+                        align-self: center;
+                    }
+
+                    &:nth-child(3) {
+                        align-self: flex-end;
+                    }
+                }
+            }
+        }
+
+    }
+
+    & .boost {
+        padding-top: 57px;
+        padding-bottom: 57px;
+        background: url(./assets/img/boost.jpg) no-repeat;
+        background-size: 100%;
+
+        &-content {
+            text-align: center;
+
+            &__title {
+                @include font(40, 700, 48, none, #FFFFFF);
+                margin-bottom: 32px;
+            }
+
+            &__btn {
+                @include font(20, 700, 30, capitalize, #FFFFFF);
+                padding: 13px 40px;
+                border-radius: 28px;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #232127;
+
+    & .footer-content {
+        @include flex(baseline, $jContent: space-between);
+        padding-top: 72px;
+        padding-bottom: 72px;
+
+        &__logo {
+            color: #FFFFFF;
+        }
+
+        &__link-block {
+            @include flex($cGap: 78px);
+
+            &__link-list {
+                @include flex($fDirection: column);
+
+                &__title {
+                    @include font(16, 700, 24, capitalize, #FFFFFF);
+                    margin-bottom: 22px;
+                }
+
+                &__link {
+                    @include font(15, 500, 22.5, capitalize, #BFBFBF);
+
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+
+                    &:hover {
+                        color: #2BD0D0;
+                    }
+                }
+            }
+        }
+
+        &__social {
+            @include flex(center, $cGap: 24px);
+
+            & a:hover svg path {
+                transition: .3s linear;
+                fill: #2BD0D0;
+            }
+        }
+    }
+}
